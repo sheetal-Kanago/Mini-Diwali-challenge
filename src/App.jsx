@@ -1,51 +1,36 @@
-import logo from './logo.svg';
+import react, {useState,useEffect } from 'react';
 import './App.scss';
-
+import Lyrics from './components/Lyrics/Lyrics';
 function App() {
-
-  const apis = [
-    "http://hp-api.herokuapp.com/api/characters",
-    "https://anapioficeandfire.com/api/characters",
-    "http://api-football-standings.azharimm.site//leagues/eng.1/standings",
-    "https://api.spacexdata.com/v4/launches/latest (latest launch data for SpaceX)",
-    "http://api.worldbank.org/v2/country/ind?format=json",
-    "https://x-math.herokuapp.com/api/random",
-    "https://api.adviceslip.com/advice",
-    "https://api.lyrics.ovh/v1/Coldplay/Adventure of a Lifetime",
-    "https://api.quarantine.country/api/v1/summary/latest",
-    "https://qrng.anu.edu.au/contact/api-documentation/"
-  ]
-
-  apis.forEach(api => {
-    fetch(api)
+  const [artistNumber, setArtistNumber]=useState(null);
+  const [lyrics,setLyrics]=useState(null)
+  // let lyrics1="";
+  let url = "https://api.lyrics.ovh/v1/";
+  
+  
+  useEffect(()=>{
+    url+=artistNumber;
+    // console.log(url);
+    fetch(url)
       .then(res=> res.json())
-      .then(json=>{
-        console.log("===========================");
-        console.log(api);  
-        console.log("===========================");
-        console.log(json);
-      })
-    
-  })
-
+      .then(json=>setLyrics(json.lyrics))
+      .catch(err => console.log(err))
+  },[artistNumber]);
+  //  console.log(objectOf(lyrics));
   return (  
-   <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      {/* Add a dropdown for artiste-song selection
+      create a <Lyrics> page and pass json.lyrics to it. Display lyrics. */}
+      <label htmlFor="artiste-number">Choose an artiste-number:</label>
+      <select name="artiste-number" id="artiste-number" 
+        onChange={e => setArtistNumber(e.target.value)}>
+        <option value="Alan Walker/Faded">Alan-Walker: Faded</option>  
+        <option value="Bryan Adams/Heaven">Bryan Adams: Heaven</option>        
+      </select>
+      {artistNumber && <Lyrics lyrics={lyrics} />}
 
+
+    </>
+  )
+}
 export default App;
