@@ -1,4 +1,4 @@
-import react, {useState,useEffect } from 'react';
+import React, {useState,useEffect } from 'react';
 import './App.scss';
 import Lyrics from './components/Lyrics/Lyrics';
 function App() {
@@ -21,12 +21,16 @@ function App() {
     <>
       {/* Add a dropdown for artiste-song selection
       create a <Lyrics> page and pass json.lyrics to it. Display lyrics. */}
-      <label htmlFor="artiste-number">Choose an artiste-number:</label>
+      <h4>Get Lyrics</h4>
+      <label htmlFor="artiste-number">Choose the artiste and song:</label>
+      <p></p>
       <select name="artiste-number" id="artiste-number" 
         onChange={e => setArtistNumber(e.target.value)}>
         <option value="Alan Walker/Faded">Alan-Walker: Faded</option>  
         <option value="Bryan Adams/Heaven">Bryan Adams: Heaven</option>        
+        <option value="Cher/Believe">Cher: Believe</option>        
       </select>
+      <p></p>
       {artistNumber && <Lyrics lyrics={lyrics} />}
 
 
