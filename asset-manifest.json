@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Mini-Diwali-challenge/static/css/main.c9859ede.chunk.css",
+    "main.js": "/Mini-Diwali-challenge/static/js/main.ca041cf7.chunk.js",
+    "main.js.map": "/Mini-Diwali-challenge/static/js/main.ca041cf7.chunk.js.map",
+    "runtime-main.js": "/Mini-Diwali-challenge/static/js/runtime-main.8e00cdd5.js",
+    "runtime-main.js.map": "/Mini-Diwali-challenge/static/js/runtime-main.8e00cdd5.js.map",
+    "static/js/2.330ac1a7.chunk.js": "/Mini-Diwali-challenge/static/js/2.330ac1a7.chunk.js",
+    "static/js/2.330ac1a7.chunk.js.map": "/Mini-Diwali-challenge/static/js/2.330ac1a7.chunk.js.map",
+    "static/js/3.867a569b.chunk.js": "/Mini-Diwali-challenge/static/js/3.867a569b.chunk.js",
+    "static/js/3.867a569b.chunk.js.map": "/Mini-Diwali-challenge/static/js/3.867a569b.chunk.js.map",
+    "index.html": "/Mini-Diwali-challenge/index.html",
+    "static/css/main.c9859ede.chunk.css.map": "/Mini-Diwali-challenge/static/css/main.c9859ede.chunk.css.map",
+    "static/js/2.330ac1a7.chunk.js.LICENSE.txt": "/Mini-Diwali-challenge/static/js/2.330ac1a7.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8e00cdd5.js",
+    "static/js/2.330ac1a7.chunk.js",
+    "static/css/main.c9859ede.chunk.css",
+    "static/js/main.ca041cf7.chunk.js"
+  ]
+}
